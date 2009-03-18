@@ -1,0 +1,6 @@
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+config/initializers/action_mailer_configs.rb
+db/*.sqlite3
