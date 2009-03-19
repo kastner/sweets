@@ -1,4 +1,19 @@
 <h1>Welcome to Sweets!</h1>
-Login
+
+<% form_tag sessions_path, :method => :post do %>
+<div>
+  <%= label_tag "project" %>
+  <%= text_field_tag "project" %>
+</div>
+
+<div>
+  <%= label_tag "password" %>
+  <%= password_field_tag "password" %>
+</div>
+
+<div>
+  <%= submit_tag "Log in" %>
+</div>
+<% end %>
 
 <%= link_to "Create a new Project", new_project_path %>

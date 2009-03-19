@@ -40,6 +40,7 @@ class Project < ActiveRecord::Base
   end
   
   def self.get_from_cookie(cookie)
+    return nil unless cookie
     name, name_h, pass_hash = cookie.split(COOKIE_SEPERATOR)
     return nil unless hashed_name(name) == name_h
     return nil unless p = Project.find_from_name(name)

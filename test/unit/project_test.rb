@@ -67,4 +67,8 @@ class ProjectTest < ActiveSupport::TestCase
     assert_equal projects(:kastner_town),
       Project.authenticate("kasTner town", "bob")
   end
+  
+  test "an empty cookie should return a nil project" do
+    assert_equal nil, Project.get_from_cookie(nil)
+  end
 end

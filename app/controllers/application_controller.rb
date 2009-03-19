@@ -39,4 +39,15 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || root_url)
     session[:return_to] = nil
   end
+  
+  def save_cookie
+    cookies[:project] = { 
+      :value => current_project.cookie, 
+      :expires => Time.now + 3.years
+    }
+  end
+  
+  def drop_cookie
+    cookies.delete :project
+  end
 end
