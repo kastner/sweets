@@ -3,4 +3,5 @@ log/*.log
 tmp/**/*
 config/database.yml
 config/initializers/action_mailer_configs.rb
+config/initializers/salt.rb
 db/*.sqlite3

@@ -1,15 +1,6 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
-  password: MyString
-  terms: MyString
-  notes: MyText
-  email: MyString
-
-two:
-  name: MyString
-  password: MyString
-  terms: MyString
-  notes: MyText
-  email: MyString
+kastner_town:
+  name: Kastner Town
+  password: ufaZZFqZ28e4f41517b0994175651a10eada4cb12668f45d
+  terms: kastner
+  notes: My Ego Search
+  email: kastner@gmail.com
