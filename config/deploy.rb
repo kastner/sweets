@@ -31,9 +31,11 @@
   task :after_symlink do
     run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/system/action_mailer_configs.rb #{release_path}/config/initializers/action_mailer_configs.rb"
+    run "ln -nfs #{shared_path}/system/salt.rb #{release_path}/config/initializers/salt.rb"
   end
   
   task :after_setup do
     put File.read('config/database.yml'), "#{shared_path}/system/database.yml"
     put File.read('config/initializers/action_mailer_configs.rb'), "#{shared_path}/system/action_mailer_configs.rb"
+    put File.read('config/initializers/salt.rb'), "#{shared_path}/system/salt.rb"
   end
