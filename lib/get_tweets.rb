@@ -1,9 +1,6 @@
 require 'open-uri'
 require 'json'
 
-project = Project.find(ARGV[0])
-raise "No project" unless project
-
 module TwitterSearch
   extend self
 
@@ -22,11 +19,13 @@ module TwitterSearch
   end
 end
 
-last_id = (!project.tweets.empty? && project.tweets.first.twitter_id) || 0
-results = TwitterSearch.fetch(project.terms, last_id)
-results["results"].each do |tweet|
-  tweet["twitter_id"] = tweet.delete("id")
-  t = Tweet.find_or_create_by_twitter_id(tweet)
-  project.tweets << t unless project.tweets.include?(t)
+Project.all.each do |project|
+  last_id = (!project.tweets.empty? && project.tweets.first.twitter_id) || 0
+  results = TwitterSearch.fetch(project.terms, last_id)
+  results["results"].each do |tweet|
+    tweet["twitter_id"] = tweet.delete("id")
+    t = Tweet.find_or_create_by_twitter_id(tweet)
+    project.tweets << t unless project.tweets.include?(t)
+  end
+  project.apply_filters
 end
-project.apply_filters
