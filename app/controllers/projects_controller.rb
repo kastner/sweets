@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_filter :project_required, :except => [:home, :new, :create]
   
   def home
-    redirect_to project_url if logged_in?
+    redirect_to edit_project_url if logged_in?
   end
   
   def show

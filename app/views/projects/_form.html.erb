@@ -10,6 +10,7 @@
   <%= f.text_field :email %>
 </div>
 
+<% if @project.new_record? %>
 <div>
   <%= f.label :password %>
   <%= f.password_field :password %>
@@ -19,6 +20,7 @@
   <%= label_tag :password_conf %>
   <%= password_field_tag :password_conf %>
 </div>
+<% end %>
 
 <div>
   <%= f.label :terms, "Search terms" %>
