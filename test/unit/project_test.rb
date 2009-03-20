@@ -71,4 +71,14 @@ class ProjectTest < ActiveSupport::TestCase
   test "an empty cookie should return a nil project" do
     assert_equal nil, Project.get_from_cookie(nil)
   end
+  
+  test "should be able to get the newest tweet" do
+    assert_equal tweets(:emily), projects(:kastner_town).tweets.latest.first
+  end
+  
+  test "a project should filter itself" do
+    assert_difference("Tweep.count", -1) do
+      projects(:kastner_town).apply_filters
+    end
+  end
 end

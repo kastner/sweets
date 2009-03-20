@@ -1,13 +1,4 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  project_id: 1
-  from_user_id: 1
-  twitter_id: 1
-  note: MyText
-
-two:
-  project_id: 1
-  from_user_id: 1
-  twitter_id: 1
-  note: MyText
+kill_3541296:
+  project: kastner_town
+  from_user_id: 3541296
+  note: "Fun"

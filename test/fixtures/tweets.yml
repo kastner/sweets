@@ -1,23 +1,10 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  text: MyString
-  to_user_id: 1
-  to_user: MyString
-  from_user: MyString
-  twitter_id: 1
-  from_user_id: 1
-  iso_language_code: MyString
-  source: MyString
-  profile_image_url: MyString
-
-two:
-  text: MyString
-  to_user_id: 1
-  to_user: MyString
-  from_user: MyString
-  twitter_id: 1
-  from_user_id: 1
-  iso_language_code: MyString
-  source: MyString
-  profile_image_url: MyString
+emily:
+  text: "@Emily_YA Holly Black, Scott Westerfeld, Justine Larb..., Rachel Cohn, Libba Bray, David Levithan, Barry Lyga, WOW"
+  to_user_id: 823664
+  to_user: "Emily_YA"
+  from_user: "TiffanySchmidt"
+  twitter_id: 1351645260
+  from_user_id: 3541296
+  iso_language_code: "en"
+  source: "&lt;a href=&quot;http:\/\/www.twibble.de\/&quot;&gt;twibble&lt;\/a&gt;"
+  profile_image_url: "http:\/\/s3.amazonaws.com\/twitter_production\/profile_images\/77174486\/P1010270_-_Copy_normal.JPG"

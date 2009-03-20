@@ -1,2 +1,13 @@
-<h1>Filters#index</h1>
-<p>Find me in app/views/filters/index.html.erb</p>
+<h1>Filters for <%= h(current_project.name) %></h1>
+
+<% if current_project.filters.empty? %>
+No Filters yet
+<% else %>
+<ul>
+  <%= render :partial => "filter", :collection => current_project.filters %>
+</ul>
+<% end %>
+
+<p>
+  <%= link_to "new filter", new_project_filter_path %>
+</p>

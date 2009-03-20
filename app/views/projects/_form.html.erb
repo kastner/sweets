@@ -1,0 +1,56 @@
+<% form_for @project, :url => project_path do |f| %>
+<%= f.error_messages %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :email, "Your email (no spam!)" %>
+  <%= f.text_field :email %>
+</div>
+
+<div>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</div>
+
+<div>
+  <%= label_tag :password_conf %>
+  <%= password_field_tag :password_conf %>
+</div>
+
+<div>
+  <%= f.label :terms, "Search terms" %>
+  <%= f.text_field :terms %>
+</div>
+
+<div>
+  <%= f.label :page_template, "Page template (%tweets% gets replaced with tweets)" %>
+  <%= f.text_area :page_template %>
+</div>
+
+<div>
+  <%= f.label :tweet_template %>
+  <%= f.text_area :tweet_template %>
+</div>
+
+<div>
+  <%= submit_tag(@project.new_record? ? "Add Project" : "Update Project") %>
+</div>
+<% end %>
+
+<h4>Available fields for tweet</h4>
+<ul>
+  <li>%tweet.text%</li>
+  <li>%tweet.to_user_id%</li>
+  <li>%tweet.to_user%</li>
+  <li>%tweet.from_user%</li>
+  <li>%tweet.twitter_id%</li>
+  <li>%tweet.from_user_id%</li>
+  <li>%tweet.iso_language_code%</li>
+  <li>%tweet.source%</li>
+  <li>%tweet.profile_image_url%</li>
+  <li>%tweet.created_at%</li>
+  <li>%tweet.updated_at%</li>
+</ul>

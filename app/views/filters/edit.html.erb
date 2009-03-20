@@ -1,2 +1,7 @@
-<h1>Filters#edit</h1>
-<p>Find me in app/views/filters/edit.html.erb</p>
+<h1>Filter on for user id:<%= @filter.from_user_id %></h1>
+
+<% form_for @filter, :url => project_filter_url(@filter), :html => { :method => :delete } do |f| %>
+  <%= f.submit "Remove this filter*" %>
+<% end %>
+
+* removing a filter will not restore old tweets.

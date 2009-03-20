@@ -1,2 +1,15 @@
-<h1>Filters#new</h1>
-<p>Find me in app/views/filters/new.html.erb</p>
+
+<h1>Create a filter</h1>
+<% form_for @filter, :url => project_filters_path do |f| %>
+<%= f.error_messages %>
+<div>
+  <%= f.label :from_user_id, "Twitter user id to block" %>
+  <%= f.text_field :from_user_id %>
+</div>
+
+<div>
+  <%= f.label :note %>
+  <%= f.text_area :note %>
+</div>
+<%= f.submit "Save" %>
+<% end %>

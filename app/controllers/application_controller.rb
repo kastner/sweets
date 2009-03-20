@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class ApplicationController < ActionController::Base
   helper :all
+  helper_method :current_project
   protect_from_forgery
 
   def logged_in?

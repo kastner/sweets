@@ -2,6 +2,8 @@ require 'digest/sha1'
 
 class Project < ActiveRecord::Base
   has_many :filters
+  has_many :tweeps
+  has_many :tweets, :through => :tweeps, :order => "tweets.created_at DESC"
   
   validates_presence_of :name, :terms, :password
   validates_uniqueness_of :name, :case_sensitive => false
@@ -72,5 +74,12 @@ class Project < ActiveRecord::Base
   
   def name_restriction
     errors.add(:name, "Must not contain #{COOKIE_SEPERATOR}") if name.match(/#{COOKIE_SEPERATOR}/)
+  end
+  
+  def apply_filters
+    tweets.from_users(filters.map(&:from_user_id)).each do |t|
+      puts "deleting #{t.inspect}"
+      self.tweets.delete(t)
+    end
   end
 end
