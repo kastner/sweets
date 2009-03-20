@@ -17,6 +17,6 @@ class OutputController < ApplicationController
       tpl
     end.join("\n")
     
-    render :template => "projects/show.out.erb"
+    render :template => "projects/show.out.erb", :layout => false
   end
 end
