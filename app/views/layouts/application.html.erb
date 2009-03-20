@@ -18,6 +18,12 @@
   </script>
 </head>
 <body id="<%= body_id %>">
+  <div id="header">
+    <% if logged_in? %>
+    Logged into the <em><%= h current_project.name %></em> project.
+    <%= link_to "Log out", logout_url %>
+    <% end %>
+  </div>
   <div id="page">
     <%= render :partial => 'layouts/flashes' -%>
     <%= yield %>
