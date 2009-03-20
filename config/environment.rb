@@ -10,6 +10,7 @@ Rails::Initializer.run do |config|
   config.gem 'sqlite3-ruby', :lib => 'sqlite3'
   config.gem 'ambethia-smtp-tls', :lib => 'smtp-tls', :source => 'http://gems.github.com'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'json'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

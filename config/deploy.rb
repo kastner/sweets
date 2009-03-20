@@ -28,8 +28,9 @@
   end
   
   desc "Link production files"
-  task :after_symlink do
+  task :after_update_code do
     run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/system/production.sqlite3 #{release_path}/db/production.sqlite3"
     run "ln -nfs #{shared_path}/system/action_mailer_configs.rb #{release_path}/config/initializers/action_mailer_configs.rb"
     run "ln -nfs #{shared_path}/system/salt.rb #{release_path}/config/initializers/salt.rb"
   end
@@ -38,4 +39,5 @@
     put File.read('config/database.yml'), "#{shared_path}/system/database.yml"
     put File.read('config/initializers/action_mailer_configs.rb'), "#{shared_path}/system/action_mailer_configs.rb"
     put File.read('config/initializers/salt.rb'), "#{shared_path}/system/salt.rb"
+    run "touch #{shared_path}/system/production.sqlite3"
   end
