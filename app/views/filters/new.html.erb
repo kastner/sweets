@@ -3,8 +3,8 @@
 <% form_for @filter, :url => project_filters_path do |f| %>
 <%= f.error_messages %>
 <div>
-  <%= f.label :from_user_id, "Twitter user id to block" %>
-  <%= f.text_field :from_user_id %>
+  <%= f.label :from_user, "Twitter user name to block" %>
+  <%= f.text_field :from_user %>
 </div>
 
 <div>

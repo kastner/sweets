@@ -77,8 +77,8 @@ class Project < ActiveRecord::Base
   end
   
   def apply_filters
-    tweets.from_users(filters.map(&:from_user_id)).each do |t|
-      puts "deleting #{t.inspect}"
+    tweets.from_users(filters.map(&:from_user)).each do |t|
+      # puts "deleting #{t.inspect}"
       self.tweets.delete(t)
     end
   end

@@ -77,7 +77,7 @@ class ProjectTest < ActiveSupport::TestCase
   end
   
   test "a project should filter itself" do
-    assert_difference("Tweep.count", -1) do
+    assert_difference("Tweep.count", -1) do 
       projects(:kastner_town).apply_filters
     end
   end

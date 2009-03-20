@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090320034327) do
+ActiveRecord::Schema.define(:version => 20090320083355) do
 
   create_table "filters", :force => true do |t|
     t.integer  "project_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20090320034327) do
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "from_user"
   end
 
   create_table "projects", :force => true do |t|
@@ -52,5 +53,7 @@ ActiveRecord::Schema.define(:version => 20090320034327) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tweets", ["from_user"], :name => "index_tweets_on_from_user"
 
 end
