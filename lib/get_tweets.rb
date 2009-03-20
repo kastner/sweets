@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require 'uri'
 
 module TwitterSearch
   extend self
@@ -21,7 +22,7 @@ end
 
 Project.all.each do |project|
   last_id = (!project.tweets.empty? && project.tweets.first.twitter_id) || 0
-  results = TwitterSearch.fetch(project.terms, last_id)
+  results = TwitterSearch.fetch(URI.escape(project.terms), last_id)
   results["results"].each do |tweet|
     tweet["twitter_id"] = tweet.delete("id")
     t = Tweet.find_or_create_by_twitter_id(tweet)
